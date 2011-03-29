@@ -96,9 +96,10 @@ public class Friends extends HttpServlet {
 			// StreamResult(p));
 
 			// transform the XML to HTML
+			String xslFile = File.separator + "xsl" + File.separator + "facebook.xsl";
 			final StreamSource source = new StreamSource(new File(this
 					.getServletContext().getRealPath(
-							Config.getValue("XSL_FILE"))));
+							xslFile)));
 			OutputGenerator.transformWithStyle(new DOMSource(doc), source,
 					new StreamResult(p));
 		} catch (final Exception e) {
