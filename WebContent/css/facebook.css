@@ -109,3 +109,13 @@ div.name {
 	margin-top: 10px;
 	overflow: hidden;
 }
+
+div.login {
+	position: absolute;
+	height: 22px;
+	top:50%;
+	left:50%;
+	margin-left:-33px;
+	margin-top:-11px;
+	width: 66px;
+}
