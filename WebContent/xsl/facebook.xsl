@@ -8,6 +8,8 @@
 				<title>FFFRIENDS</title>
 				<link rel="stylesheet" type="text/css" href="../css/facebook.css" />
 				<script src="../js/ajax.js"></script>
+				<script src="../js/jquery.js"></script>
+				<script src="../js/friends.js"></script>
 			</head>
 			<body>
 				<div class = "content">
@@ -82,6 +84,9 @@
 					<div class = "detail">more shit</div>
 				</div>
 			</body>
+			<script>
+			<xsl:for-each select="*/user">names["<xsl:value-of select='uid'/>"] = "<xsl:value-of select="name"/>";</xsl:for-each>
+			</script>
 		</html>
 	</xsl:template>
 	
