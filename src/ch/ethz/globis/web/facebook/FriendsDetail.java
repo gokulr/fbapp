@@ -96,12 +96,13 @@ public class FriendsDetail extends HttpServlet {
 						+ URLEncoder.encode(
 								"SELECT name,uid,pic_square,sex FROM user WHERE uid="
 										+ uid, "UTF-8"));
-
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
 		final DocumentBuilder builder = factory.newDocumentBuilder();
-
-		return builder.parse(url.openStream());
-
+		Document doc = builder.parse(url.openStream());
+		System.out.println(doc.getDocumentElement());
+		
+		
+		return doc;
 	}
 }

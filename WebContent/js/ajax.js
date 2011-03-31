@@ -42,6 +42,7 @@ function displayUser(user) {
 	var fields = new Array();
 
 	fields["Gender:"] = user.getElementsByTagName("sex")[0];
+	fields["Friends:"] = user.getElementsByTagName("friends")[0];
 	
 	var table = document.createElement("table");
 	var tbody = document.createElement("tbody");

@@ -2,8 +2,6 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fb="http://api.facebook.com/1.0/">
 
-	<xsl:import href="header.xsl" />
-
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -12,34 +10,36 @@
 				<script src="../js/ajax.js"></script>
 			</head>
 			<body>
-				<xsl:copy-of select="$header" />
-				<h1>Welcome!</h1>
-				<br />
-
-
-				<table border="1" width="100%">
-					<tr>
-						<th>Name</th>
-						<th>Picture</th>
-					</tr>
-					<xsl:for-each select="*/user">
-
-						<tr>
-							<td align="center" style="cursor: pointer">
-								<xsl:attribute name="id">
-			      					<xsl:value-of select="uid" />
-			      				</xsl:attribute>
-								<xsl:attribute name="onclick">submitValue(<xsl:value-of
-									select="uid" />)</xsl:attribute>
-								<xsl:value-of select="name" />
-							</td>
-							<td align="center">
-								<xsl:apply-templates select="pic_square" />
-							</td>
-						</tr>
-
-					</xsl:for-each>
-				</table>
+				<div class = "header">FACEBOOK</div>
+				<div class = "chooser">
+					<div class = "leftarrow">&lt;-</div>
+					<div class = "grid" id = "grid">
+						<div id = "slideable">
+							<table class = "grid">
+							<tr>
+							<xsl:for-each select="*/user">
+								<xsl:if test = "6 > position()">
+									<td>
+										<xsl:apply-templates select="pic_square" />
+									</td>
+								</xsl:if>
+							</xsl:for-each>
+							</tr>
+							<tr>
+							<xsl:for-each select="*/user">
+								<xsl:if test = "position() > 6 and 12 > position()">
+									<td>
+										<xsl:apply-templates select="pic_square" />
+									</td>
+								</xsl:if>
+							</xsl:for-each>
+							</tr>
+							</table>
+						</div>
+					</div>
+					<div class = "rightarrow">-&gt;</div>
+				</div>
+				<div class = "detail">more shit</div>
 			</body>
 		</html>
 	</xsl:template>
