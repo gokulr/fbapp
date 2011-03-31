@@ -21,7 +21,13 @@
 								<xsl:for-each select="*/user">
 									<xsl:if test = "7 > position()">
 										<td>
-											<xsl:apply-templates select="pic_square" />
+											<a>
+												<xsl:attribute name="id">
+												<xsl:value-of select="uid"/>
+												</xsl:attribute>
+												<xsl:attribute name="href">#<xsl:value-of select="uid"/></xsl:attribute>
+												<xsl:apply-templates select="pic_square" />
+											</a>
 										</td>
 									</xsl:if>
 								</xsl:for-each>
@@ -30,7 +36,13 @@
 								<xsl:for-each select="*/user">
 									<xsl:if test = "position() >= 7 and 13 > position()">
 										<td>
-											<xsl:apply-templates select="pic_square" />
+											<a>
+												<xsl:attribute name="id">
+												<xsl:value-of select="uid"/>
+												</xsl:attribute>
+												<xsl:attribute name="href">#<xsl:value-of select="uid"/></xsl:attribute>
+												<xsl:apply-templates select="pic_square" />
+											</a>
 										</td>
 									</xsl:if>
 								</xsl:for-each>
@@ -39,7 +51,13 @@
 								<xsl:for-each select="*/user">
 									<xsl:if test = "position() >= 13 and 19 > position()">
 										<td>
-											<xsl:apply-templates select="pic_square" />
+											<a>
+												<xsl:attribute name="id">
+												<xsl:value-of select="uid"/>
+												</xsl:attribute>
+												<xsl:attribute name="href">#<xsl:value-of select="uid"/></xsl:attribute>
+												<xsl:apply-templates select="pic_square" />
+											</a>
 										</td>
 									</xsl:if>
 								</xsl:for-each>
@@ -58,8 +76,8 @@
 	<xsl:template match="pic_square">
 		<img>
 			<xsl:attribute name="src">
-      		<xsl:value-of select="." />
-      	</xsl:attribute>
+      			<xsl:value-of select="." />
+      		</xsl:attribute>
 		</img>
 	</xsl:template>
 
