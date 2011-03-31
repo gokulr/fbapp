@@ -43,7 +43,7 @@ public class Friends extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final int MAX_FRIENDS = 15;
+	private static final int MAX_FRIENDS = 18;
 
 	@Override
 	public void doGet(final HttpServletRequest request,
@@ -82,7 +82,7 @@ public class Friends extends HttpServlet {
 							+ accessToken
 							+ "&query="
 							+ URLEncoder
-									.encode("SELECT name,uid,pic_square FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1=me() )",
+									.encode("SELECT name,uid,pic_square FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1=me() ) ORDER BY name LIMIT " + MAX_FRIENDS,
 											"UTF-8"));
 
 			final DocumentBuilderFactory factory = DocumentBuilderFactory

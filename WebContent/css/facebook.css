@@ -1,55 +1,96 @@
-h1 {
-	background-color:#ffffff; 
-	color:#353e90; 
-	font-family: Arial, Helvetica, sans-serif; 
-	font-size:24px; 
-	font-weight:bold; 
-	font-style:normal; 
-	margin-top:6px; 
-	margin-bottom:6px; 
-}
-p  {  
-	background-color:#ffffff; 
-	color:#000000; 
-	font-family: Arial, Helvetica, sans-serif; 
-	font-size:12px; 
-	font-weight:normal; 
-	font-style:normal; 
-	margin-top:0pt; 
-	margin-bottom:12pt 
-}
-td.header {  
-	background-color:#353e90; 
-	color:#ffffff;
-	font-family: Arial, Helvetica, sans-serif; 
-	font-size:18px; 
-	font-weight:normal; 
-	font-style:normal; 
-	padding-top:3px;
-	padding-bottom:3px;
-	padding-left:9px;
-}
-td.fieldname {  
-	color:#000000;
-	font-family: Arial, Helvetica, sans-serif; 
-	font-size:13px; 
-	font-weight:normal; 
-	font-style:normal; 
-}
-td{ color:#353e90;
-	border:1px #353e90;
-	font-family: Arial, Helvetica, sans-serif; 
-	font-size:14px; 
-	font-weight:bold; 
-	font-style:normal; 
+div.content {
+	position: absolute;
+	width: 500px;
+	left: 50%;
+	margin-left:-250px;	
 }
 
-table.form {
-	border-style:dotted; 
-	border-color:#353e90; 
-	border-width:1px; 
-	padding:9px;
+div.header {
+	width:100%;
+	text-align:center;
+	font-size: 100px;
+	font-family: 'Impact';	
+	font-weight: bold;
+	height:150px;
+}
+
+div.arrow {
+	height: 60px;
+	width: 50px;
+	position:absolute;	
+	top:150px;
+	padding-top:70px;
+	padding-bottom:70px;
+	font-size:50px;
+	font-family: 'Impact';
+	font-weight:bold;
+}
+div.arrow a {
+	color:black;
+	text-decoration:underline overline;
+}
+
+div.arrow a:hover {
+	color:black;
+	text-decoration:none;
+	
 }
 
 
 
+div#leftarrow {
+	left:0px;
+}
+	
+div#rightarrow {
+	right:0px;
+}
+
+div.grid {
+	text-align: center;
+	width: 300px;
+	height: 200px;
+	position:absolute;
+	left: 50px;
+}
+
+div.slideable{
+	width:100%;
+	text-align:center;
+}
+
+div.slideable table{
+	width:100%;
+	text-align:center;
+}
+
+div.detail {
+	position:absolute;
+	top: 350px;
+	width:100%;
+}
+
+div.grid {
+	width:400px;	
+	height:200px;
+	overflow:hidden;
+}
+	
+div#slideable {
+	width:400px;
+	height:140px;
+	top:50%;
+	margin-top:-70px;
+	text-align:center;
+	position:absolute;
+}
+
+
+
+div#slideable table {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:auto;
+	margin-bottom:auto;
+	text-align:left;
+}
