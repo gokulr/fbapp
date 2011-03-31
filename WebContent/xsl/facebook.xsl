@@ -5,13 +5,13 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<title>My Facebook Application</title>
+				<title>FFFRIENDS</title>
 				<link rel="stylesheet" type="text/css" href="../css/facebook.css" />
 				<script src="../js/ajax.js"></script>
 			</head>
 			<body>
 				<div class = "content">
-					<div class = "header">FFRIENDS</div>
+					<div class = "header">FFFRIENDS</div>
 					<div class = "chooser">
 						<div class = "arrow" id="leftarrow"><a id="left" href="#left">&lt;</a></div>
 						<div class = "grid" id = "grid">
