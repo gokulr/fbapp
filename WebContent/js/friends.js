@@ -7,7 +7,7 @@ var lastId = 0;
 
 $(document).ready(function() {
 	$("div.thumbnail").live("click", function() {
-		$("div.detail").text(names[$(this).attr('id')]);
+		selectName($(this).attr('id'));
 	   });
 	/*$("a.thumbnail").live("mouseenter", function() {
 		if(lastId != 0) {
@@ -22,15 +22,31 @@ $(document).ready(function() {
 		revert: "invalid",
 		containment: "div.content",
 		helper: "clone",
-		opacity: 0.5
+		opacity: 0.5,
+		zIndex: 10000
 	});
 	
 	$("div.detail").droppable( {
 		accept: "div.thumbnail",
 		activeClass: "details-droppable",
 		drop: function( event, ui ) {
-			$("div.detail").text(names[ui.draggable.clone().attr('id')]);
+			selectName(ui.draggable.clone().attr('id'));
 			//$("div.detail").
 		}
 	});
- });
+});
+
+function selectName(id) {
+	if(lastId != id) {
+		$("div.detail").text(names[id]);
+		$("td#" + id + " div img").addClass("selected");
+		$("td#" + id + " div").addClass("selected");
+		
+		if(lastId != 0) {
+			$("td#" + lastId + " div img").removeClass("selected");
+			$("td#" + lastId + " div").removeClass("selected");
+	
+		}
+		lastId = id;
+	}
+}

@@ -32,12 +32,16 @@
 											<xsl:value-of select="uid"/>
 											</xsl:attribute>
 											<a>
-												<xsl:attribute name="id">
-												<xsl:value-of select="uid"/>
-												</xsl:attribute>
 												<xsl:attribute name="class">thumbnail</xsl:attribute>
 												<xsl:attribute name="href">#<xsl:value-of select="uid"/></xsl:attribute>
-												<xsl:apply-templates select="pic_square" />
+												<img>
+													<xsl:attribute name="src">
+										      			<xsl:value-of select="pic_square" />
+										      		</xsl:attribute>
+										      		<xsl:attribute name="id">
+										      			<xsl:value-of select="uid" />
+										      		</xsl:attribute>
+												</img>
 											</a>
 											</div>
 										</td>
@@ -56,12 +60,16 @@
 											<xsl:value-of select="uid"/>
 											</xsl:attribute>
 											<a>
-												<xsl:attribute name="id">
-												<xsl:value-of select="uid"/>
-												</xsl:attribute>
 												<xsl:attribute name="class">thumbnail</xsl:attribute>
 												<xsl:attribute name="href">#<xsl:value-of select="uid"/></xsl:attribute>
-												<xsl:apply-templates select="pic_square" />
+												<img>
+													<xsl:attribute name="src">
+										      			<xsl:value-of select="pic_square" />
+										      		</xsl:attribute>
+										      		<xsl:attribute name="id">
+										      			<xsl:value-of select="uid" />
+										      		</xsl:attribute>
+												</img>
 											</a>
 											</div>
 										</td>
@@ -80,12 +88,16 @@
 											<xsl:value-of select="uid"/>
 											</xsl:attribute>
 											<a>
-												<xsl:attribute name="id">
-												<xsl:value-of select="uid"/>
-												</xsl:attribute>
 												<xsl:attribute name="class">thumbnail</xsl:attribute>
 												<xsl:attribute name="href">#<xsl:value-of select="uid"/></xsl:attribute>
-												<xsl:apply-templates select="pic_square" />
+												<img>
+													<xsl:attribute name="src">
+										      			<xsl:value-of select="pic_square" />
+										      		</xsl:attribute>
+										      		<xsl:attribute name="id">
+										      			<xsl:value-of select="uid" />
+										      		</xsl:attribute>
+												</img>
 											</a>
 											</div>
 										</td>
@@ -105,13 +117,4 @@
 			</script>
 		</html>
 	</xsl:template>
-	
-	<xsl:template match="pic_square">
-		<img>
-			<xsl:attribute name="src">
-      			<xsl:value-of select="." />
-      		</xsl:attribute>
-		</img>
-	</xsl:template>
-
 </xsl:stylesheet>
