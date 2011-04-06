@@ -142,3 +142,7 @@ img.selected {
 div.selected {
 	border: solid black 3px;
 }
+
+img.hovered {
+	opacity:0.5;filter:alpha(opacity=50);
+}

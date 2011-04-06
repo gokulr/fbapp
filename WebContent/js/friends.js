@@ -1,22 +1,22 @@
 //
 var names = new Array();
 
-var lastText = null;
-var lastId = 0;
+var lastHover = 0;
 
 
 $(document).ready(function() {
 	$("div.thumbnail").live("click", function() {
 		selectName($(this).attr('id'));
 	   });
-	/*$("a.thumbnail").live("mouseenter", function() {
-		if(lastId != 0) {
-			$("td#" + lastId).empty().html(lastText);
+	$("div.thumbnail").live("mouseenter", function() {
+		if(lastHover != $(this).attr('id')) {
+			$("td#" + $(this).attr('id') + " div img").addClass("hovered");
+			if(lastHover != 0) {
+				$("td#" + lastHover + " div img").removeClass("hovered");
+			}
+			lastHover = $(this).attr('id');
 		}
-		lastId = $(this).attr('id');
-		lastText = $("td#" + $(this).attr('id')).html();
-		$("td#" + $(this).attr('id')).empty().html("<div class='name'>" + names[$(this).attr('id')].split(" ", 1) + "</div>");
-	});*/
+	});
 	
 	$("div.thumbnail").draggable({
 		revert: "invalid",
@@ -36,17 +36,19 @@ $(document).ready(function() {
 	});
 });
 
+var lastClick = 0;
+
 function selectName(id) {
-	if(lastId != id) {
+	if(lastClick != id) {
 		$("div.detail").text(names[id]);
 		$("td#" + id + " div img").addClass("selected");
 		$("td#" + id + " div").addClass("selected");
 		
-		if(lastId != 0) {
-			$("td#" + lastId + " div img").removeClass("selected");
-			$("td#" + lastId + " div").removeClass("selected");
+		if(lastClick != 0) {
+			$("td#" + lastClick + " div img").removeClass("selected");
+			$("td#" + lastClick + " div").removeClass("selected");
 	
 		}
-		lastId = id;
+		lastClick = id;
 	}
 }
