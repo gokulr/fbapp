@@ -6,7 +6,7 @@ var lastId = 0;
 
 
 $(document).ready(function() {
-	$("div#slideable table td").live("click", function() {
+	$("div.thumbnail").live("click", function() {
 		$("div.detail").text(names[$(this).attr('id')]);
 	   });
 	/*$("a.thumbnail").live("mouseenter", function() {
