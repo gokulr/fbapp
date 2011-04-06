@@ -5,6 +5,11 @@ div.content {
 	margin-left:-250px;	
 }
 
+div.chooser {
+	height: 100%;
+	width: 100%;	
+}
+
 div.header {
 	width:100%;
 	text-align:center;
@@ -37,21 +42,13 @@ div.arrow a:hover {
 }
 
 
-
 div#leftarrow {
 	left:0px;
 }
 	
 div#rightarrow {
 	right:0px;
-}
-
-div.grid {
-	text-align: center;
-	width: 300px;
-	height: 200px;
-	position:absolute;
-	left: 50px;
+	text-align:right;
 }
 
 div.slideable{
@@ -67,13 +64,25 @@ div.slideable table{
 div.detail {
 	position:absolute;
 	top: 350px;
-	width:100%;
+	width:490px;
+	height: 300px;
+	border-width: 4px;
+	border-color: black;
+	border-style: solid;
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	border-radius:20px;
+	text-align:center;
+	padding: 5px;
+	font-size: 20px;
+	font-family: 'Impact';
 }
 
 div.grid {
+	position:absolute;
+	left: 50px;
 	width:400px;	
 	height:200px;
-	overflow:hidden;
 }
 	
 div#slideable {
@@ -118,4 +127,8 @@ div.login {
 	margin-left:-33px;
 	margin-top:-11px;
 	width: 66px;
+}
+
+div.details-droppable {
+	background-color: #CCCCCC;	
 }
