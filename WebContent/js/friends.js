@@ -43,6 +43,7 @@ function selectName(id) {
 		$("div.detail").text(names[id]);
 		$("td#" + id + " div img").addClass("selected");
 		$("td#" + id + " div").addClass("selected");
+		$("td#" + id + " div img").removeClass("hovered");
 		
 		if(lastClick != 0) {
 			$("td#" + lastClick + " div img").removeClass("selected");
