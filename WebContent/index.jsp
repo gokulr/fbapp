@@ -34,7 +34,7 @@
 							}
 						</script>
 					</div>
-					<fb:login-button></fb:login-button>
+					<fb:login-button perms="friends_birthday,friends_events,friends_groups,friends_hometown,friends_location,friends_online_presence,friends_relationships,friends_relationship_details,friends_status, friends_religion_politics"></fb:login-button>
 					</div>
 				</div>
 				<div class = "arrow" id="rightarrow"><a id="right" href="#right">&gt;</a></div>

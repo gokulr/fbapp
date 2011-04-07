@@ -13,13 +13,19 @@
 				<script src="../js/friends.js"></script>
 			</head>
 			<body>
+			<script>
+				function setNoFriends(friends) {
+					setFriends(friends);
+				}
+				setNoFriends(<xsl:value-of select="count(//user)"/>);
+			</script>
 				<div class = "content">
 					<div class = "header">FFFRIENDS</div>
 					<div class = "chooser">
 						<div class = "arrow" id="leftarrow"><a id="left" href="#left">&lt;</a></div>
 						<div class = "grid" id = "grid">
-							<div id = "slideable">
-								<table class = "grid">
+							<div id = "slideable0" class="slideable">
+								<table class = "grid" id = "thumbnailTable0">
 								<tr>
 								<xsl:for-each select="*/user">
 									<xsl:if test = "7 > position()">
@@ -109,11 +115,19 @@
 						</div>
 						<div class = "arrow" id="rightarrow"><a id="right" href="#right">&gt;</a></div>
 					</div>
-					<div class = "detail">Drag a fffriend here!</div>
+					<div id = "detail">Drag a fffriend here!</div>
+					
 				</div>
 			</body>
 			<script>
-			<xsl:for-each select="*/user">names["<xsl:value-of select='uid'/>"] = "<xsl:value-of select="name"/>";</xsl:for-each>
+			var i = 0;
+			<xsl:for-each select="*/user">
+			names["<xsl:value-of select='uid'/>"] = "<xsl:value-of select="name"/>";
+			pics[i] = "<xsl:value-of select="pic_square"/>";
+			uid[i] = "<xsl:value-of select="uid"/>";
+			i++;
+			refreshArrows();
+			</xsl:for-each>
 			</script>
 		</html>
 	</xsl:template>

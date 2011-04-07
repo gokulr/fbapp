@@ -42,9 +42,6 @@ import com.restfb.DefaultFacebookClient;
 public class Friends extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-
-	private static final int MAX_FRIENDS = 18;
-
 	@Override
 	public void doGet(final HttpServletRequest request,
 			final HttpServletResponse response) throws ServletException,
@@ -82,7 +79,7 @@ public class Friends extends HttpServlet {
 							+ accessToken
 							+ "&query="
 							+ URLEncoder
-									.encode("SELECT name,uid,pic_square FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1=me() ) ORDER BY name LIMIT " + MAX_FRIENDS,
+									.encode("SELECT name,uid,pic_square FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1=me() ) ORDER BY name;",
 											"UTF-8"));
 
 			final DocumentBuilderFactory factory = DocumentBuilderFactory

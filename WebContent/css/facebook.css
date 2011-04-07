@@ -26,21 +26,27 @@ div.arrow {
 	top:150px;
 	padding-top:70px;
 	padding-bottom:70px;
-	font-size:50px;
+	font-size:40px;
 	font-family: 'Impact';
 	font-weight:bold;
 }
-div.arrow a {
-	color:black;
-	text-decoration:underline overline;
+
+span.pointer {
+	font-size:20px;
+	padding-left:3px;
+	padding-right:3px;
 }
 
-div.arrow a:hover {
+a {
+	color:black;
+	text-decoration: none;
+}
+
+a:hover {
 	color:black;
 	text-decoration:none;
 	
 }
-
 
 div#leftarrow {
 	left:0px;
@@ -51,17 +57,7 @@ div#rightarrow {
 	text-align:right;
 }
 
-div.slideable{
-	width:100%;
-	text-align:center;
-}
-
-div.slideable table{
-	width:100%;
-	text-align:center;
-}
-
-div.detail {
+div#detail {
 	position:absolute;
 	top: 360px;
 	width:482px;
@@ -76,6 +72,7 @@ div.detail {
 	padding: 5px;
 	font-size: 20px;
 	font-family: 'Courier New', monospace;
+	overflow:hidden;
 }
 
 div.grid {
@@ -85,7 +82,7 @@ div.grid {
 	height:200px;
 }
 	
-div#slideable {
+div.slideable {
 	width:400px;
 	height:180px;
 	top:50%;
@@ -94,16 +91,25 @@ div#slideable {
 	position:absolute;
 }
 
-
-div#slideable table {
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:auto;
-	margin-bottom:auto;
-	text-align:left;
+div.left { 
+	left: -500px;	
 }
 
-div#slideable table td {
+div.right { 
+	left: 500px;	
+}
+
+div.hider {
+	overflow: hidden;
+}
+
+div.slideable table{
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+}
+
+div.slideable table td {
 	width: 50px;
 	height: 50px;
 	font-family: 'Impact';
@@ -145,4 +151,26 @@ div.selected {
 
 img.hovered {
 	opacity:0.5;filter:alpha(opacity=50);
+}
+
+img.profile {
+	float: left;		
+}
+
+div.thumnail {
+	width:50px;
+}
+
+span.name {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+img.status {
+	padding-left:5px;	
+}
+
+a.greyed {
+	color: #CCCCCC;
+	text-decoration: none;
 }

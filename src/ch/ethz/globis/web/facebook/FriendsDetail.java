@@ -94,7 +94,7 @@ public class FriendsDetail extends HttpServlet {
 						+ accessToken
 						+ "&query="
 						+ URLEncoder.encode(
-								"SELECT name,uid,pic_square,sex FROM user WHERE uid="
+								"SELECT name,uid,pic_big,sex,birthday,hometown_location,current_location,online_presence,relationship_status,status,political FROM user WHERE uid="
 										+ uid, "UTF-8"));
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();

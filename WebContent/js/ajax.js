@@ -23,8 +23,51 @@ function submitValue(uid){
 	xmlHttp.send("user=" + uid);
 }
 
-function displayUser(user) {	
-	if (expandedId !=0){
+function trim(str){
+	return str.replace(/^\s*/, "").replace(/\s*$/, "");
+}
+
+function displayUser(user) {
+	var uid = user.getElementsByTagName("uid")[0].firstChild.nodeValue;
+	var name = names[uid];
+	
+	var html = "";
+	var pic_big = user.getElementsByTagName("pic_big")[0].firstChild.nodeValue;
+
+	html += "<img class='profile' src='" + pic_big + "'>";
+	
+	html += "<span class='name'>" + name + "</span>";
+
+	var online_presence = user.getElementsByTagName("online_presence")[0].firstChild;
+	if(online_presence != null && online_presence.nodeValue != "error" && trim(online_presence.nodeValue) != ""){
+		if(online_presence.nodeValue.toLowerCase() == "offline") {
+			html += "<img src='../imgs/red.png'/ class='status'>";
+		} else {
+			html += "<img src='../imgs/green.png'/ class='status'>";			
+		}
+	}
+	
+	var status = user.getElementsByTagName("status")[0].firstChild;
+	if(status != null){
+		if(trim(status.nodeValue) != ""){
+			html += "<br/>" + status.nodeValue;
+		}
+	}
+	//alert(status);//birthday, hometown_location, current_location, online_presence, relationship_status, status
+	var birthday = user.getElementsByTagName("birthday")[0].firstChild
+	if(birthday != null && trim(birthday.nodeValue) != ""){
+		html += "<br/>" + birthday.nodeValue;
+	}
+	var relationship_status = user.getElementsByTagName("relationship_status")[0].firstChild;
+	if(relationship_status != null && trim(relationship_status.nodeValue)!=""){
+		html += "<br/>" + relationship_status.nodeValue;
+	}
+	var political_views = user.getElementsByTagName("political")[0].firstChild;
+	if(political_views != null && trim(political_views.nodeValue)!=""){
+		html += "<br/>" + political_views.nodeValue;
+	}
+	$("div#detail").html(html);//name + "<br/>" + status + "<table><tr><td>hello</td><td>as</td></tr><tr><td>asd</td></tr></table>");
+	/*if (expandedId !=0){
 		var tableNodes = document.getElementsByTagName("table");
 		for (i = 0; i < tableNodes.length; i++) {
 			tableNode = tableNodes.item(i);
@@ -73,5 +116,5 @@ function displayUser(user) {
 	}
 	
 	var resultNode = document.getElementById(uid);
-	resultNode.appendChild(table);
+	resultNode.appendChild(table);*/
 }
